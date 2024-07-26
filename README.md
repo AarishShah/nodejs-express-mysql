@@ -1,73 +1,128 @@
-# Node.js Rest APIs with Express & MySQL example
+# Node.js Express MySQL CRUD Application
 
-For instruction, please visit:
-> [Build Node.js Rest APIs with Express & MySQL](https://www.bezkoder.com/node-js-rest-api-express-mysql/)
+This is a simple Node.js application built with Express.js to perform CRUD (Create, Read, Update, Delete) operations in a MySQL database. This project is a fork of the [Bezkoder Node.js Express MySQL repository](https://github.com/bezkoder/nodejs-express-mysql).
 
-Front-end that works well with this Back-end
-> [Axios Client](https://www.bezkoder.com/axios-request/)
+## Features
 
-> [Angular 8](https://www.bezkoder.com/angular-crud-app/) / [Angular 10](https://www.bezkoder.com/angular-10-crud-app/) / [Angular 11](https://www.bezkoder.com/angular-11-crud-app/) / [Angular 12](https://www.bezkoder.com/angular-12-crud-app/) / [Angular 13](https://www.bezkoder.com/angular-13-crud-example/) / [Angular 14](https://www.bezkoder.com/angular-14-crud-example/) / [Angular 15](https://www.bezkoder.com/angular-15-crud-example/) / [Angular 16 Client](https://www.bezkoder.com/angular-16-crud-example/) / [Angular 17 Client](https://www.bezkoder.com/angular-17-crud-example/)
+- Create a new record in the MySQL database
+- Read records from the MySQL database
+- Update existing records in the MySQL database
+- Delete records from the MySQL database
 
-> [Vue 2 Client](https://www.bezkoder.com/vue-js-crud-app/) / [Vue 3 Client](https://www.bezkoder.com/vue-3-crud/) / [Vuetify Client](https://www.bezkoder.com/vuetify-data-table-example/)
+## Prerequisites
 
-> [React Client](https://www.bezkoder.com/react-crud-web-api/) / [React Redux Client](https://www.bezkoder.com/react-redux-crud-example/)
+- Node.js
+- MySQL
 
-More Practice
-> [Build Node.js Rest APIs with Express, Sequelize & MySQL](https://www.bezkoder.com/node-js-express-sequelize-mysql/)
+## Installation
 
-> [Server side Pagination in Node.js with Sequelize and MySQL](https://www.bezkoder.com/node-js-sequelize-pagination-mysql/)
+1. **Clone the repository:**
 
-> [Node.js Express File Upload Rest API example](https://www.bezkoder.com/node-js-express-file-upload/)
+```bash
+git clone <https://github.com/AarishShah/nodejs-express-mysql.git>
+cd nodejs-express-mysql
 
-> [Node.js Express File Upload with Google Cloud Storage example](https://www.bezkoder.com/google-cloud-storage-nodejs-upload-file/)
-
-> [Node.js: Upload CSV file data into Database with Express](https://www.bezkoder.com/node-js-upload-csv-file-database/)
-
-> [Node.js: Upload Excel file data into Database with Express](https://www.bezkoder.com/node-js-upload-excel-file-database/)
-
-> [Deploying/Hosting Node.js app on Heroku with MySQL database](https://www.bezkoder.com/deploy-node-js-app-heroku-cleardb-mysql/)
-
-Security:
-> [Node.js Express: JWT example | Token Based Authentication & Authorization](https://www.bezkoder.com/node-js-jwt-authentication-mysql/)
-
-Associations:
-> [Sequelize Associations: One-to-Many Relationship example](https://www.bezkoder.com/sequelize-associate-one-to-many/)
-
-> [Sequelize Associations: Many-to-Many Relationship example](https://www.bezkoder.com/sequelize-associate-many-to-many/)
-
-Fullstack:
-> [Vue.js + Node.js + Express + MySQL example](https://www.bezkoder.com/vue-js-node-js-express-mysql-crud-example/)
-
-> [Vue.js + Node.js + Express + MongoDB example](https://www.bezkoder.com/vue-node-express-mongodb-mevn-crud/)
-
-> [Angular 8 + Node.js + Express + MySQL example](https://www.bezkoder.com/angular-node-express-mysql/)
-
-> [Angular 10 + Node.js + Express + MySQL example](https://www.bezkoder.com/angular-10-node-js-express-mysql/)
-
-> [Angular 11 + Node.js Express + MySQL example](https://www.bezkoder.com/angular-11-node-js-express-mysql/)
-
-> [Angular 12 + Node.js Express + MySQL example](https://www.bezkoder.com/angular-12-node-js-express-mysql/)
-
-> [Angular 13 + Node.js Express + MySQL example](https://www.bezkoder.com/angular-13-node-js-express-mysql/)
-
-> [Angular 14 + Node.js + Express + MySQL example](https://www.bezkoder.com/angular-14-node-js-express-mysql/)
-
-> [Angular 15 + Node.js + Express + MySQL example](https://www.bezkoder.com/angular-15-node-js-express-mysql/)
-
-> [Angular 16 + Node.js + Express + MySQL example](https://www.bezkoder.com/angular-16-node-js-express-mysql/)
-
-> [Angular 17 + Node.js + Express + MySQL example](https://www.bezkoder.com/angular-17-node-js-express-mysql/)
-
-> [React + Node.js + Express + MySQL example](https://www.bezkoder.com/react-node-express-mysql/)
-
-> [React + Redux + Node.js Express + MySQL](https://www.bezkoder.com/react-redux-mysql-crud/)
-
-## Project setup
 ```
+
+1. **Install dependencies:**
+
+```bash
 npm install
+
 ```
 
-### Run
+1. **Set up environment variables:**
+
+Create a `.env` file in the root directory of the project and add the following:
+
 ```
-node server.js
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=123456
+DB_NAME=testdb
+ALLOWED_ORIGINS=http://localhost:8081,<http://localhost:3000>
+
 ```
+
+## Usage
+
+1. **Start the MySQL server and create the database:**
+
+```sql
+CREATE DATABASE testdb;
+
+```
+
+1. **Run the application:**
+
+```bash
+npm start
+
+```
+
+The server will start on port `8080` by default. You can access it at `http://localhost:8080`.
+
+## Project Structure
+
+```
+.
+├── app
+│   ├── config
+│   │   └── db.config.js
+│   ├── controllers
+│   │   └── tutorial.controller.js
+│   ├── models
+│   │   └── tutorial.model.js
+│   ├── routes
+│   │   └── tutorial.routes.js
+│   └── services
+│       └── tutorial.service.js
+├── node_modules
+├── .env
+├── package.json
+├── server.js
+└── README.md
+
+```
+
+## Routes
+
+- **Create a new record:**
+    
+    ```
+    POST /api/tutorials
+    
+    ```
+    
+- **Retrieve all records:**
+    
+    ```
+    GET /api/tutorials
+    
+    ```
+    
+- **Retrieve a single record by id:**
+    
+    ```
+    GET /api/tutorials/:id
+    
+    ```
+    
+- **Update a record by id:**
+    
+    ```
+    PUT /api/tutorials/:id
+    
+    ```
+    
+- **Delete a record by id:**
+    
+    ```
+    DELETE /api/tutorials/:id
+    
+    ```
+    
+
+## License
+
+This project is licensed under the MIT License.
