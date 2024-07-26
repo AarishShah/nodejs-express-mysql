@@ -19,7 +19,7 @@ This is a simple Node.js application built with Express.js to perform CRUD (Crea
 1. **Clone the repository:**
 
 ```bash
-git clone <https://github.com/AarishShah/nodejs-express-mysql.git>
+git clone https://github.com/AarishShah/nodejs-express-mysql.git
 cd nodejs-express-mysql
 
 ```
